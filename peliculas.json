@@ -6,7 +6,10 @@
             "genero": "Fantasía",
             "estreno": "2001",
             "autores": "J.K.Rowling",
-            "image": "img/harrypotter.JPG"
+            "image": "img/harrypotter.JPG",
+            "comentario_1": "Fue muy emotivo, lo disfrute mucho, siempre he querido leer este libro despues de ver la primera pelicula.",
+            "comentario_2": "Me pareció una película encantadora, no era lo que esperaba pero fue mucho mejor, tiene una descripción excepcional que te hace creer _ue estas en el Colegio Hogwarts de Magia y Hechicería.",
+            "comentario_3": "Peliculon"
         },
         {
             "id": 50922,
@@ -14,7 +17,10 @@
             "genero": "Terror",
             "estreno": "2002",
             "autores": "Ehren Kruger, Scott Frank",
-            "image": "img/thering.JPG"
+            "image": "img/thering.JPG",
+            "comentario_1": "La mejor pelicula de terror de a historia. No hay nada más que opinar. Imperdible.",
+            "comentario_2": "La pelicula es muy aburrida y no da e suspenso ni el miedo que uno esperaria. Solo eso",
+            "comentario_3": "Una pelicula espectacular indomable"
         },
         {
             "id": 50923,
@@ -22,7 +28,10 @@
             "genero": "Drama",
             "estreno": "2002",
             "autores": "Katy Brand",
-            "image": "img/buenasuerteleogrande.JPG"
+            "image": "img/buenasuerteleogrande.JPG",
+            "comentario_1": "La actuación de Emma Thompson nunca decepciona. Me voló el tema.",
+            "comentario_2": "No es una película de sexo, es mucho más profunda que eso. Es demasiado linda, demasiado interesante",
+            "comentario_3": "Me encantó el enfoque de la película. Fuera de la norma, sin ser obscena ni nada por el estilo"
         },
         {
             "id": 50924,
@@ -30,7 +39,10 @@
             "estreno": "2014 ",
             "genero": "Fantasía",
             "autores": "Neil Burger",
-            "image": "img/divergent.JPG"
+            "image": "img/divergent.JPG",
+            "comentario_1": "Horrible, no la recomiendo",
+            "comentario_2": "Ansioso por ver la segunda!",
+            "comentario_3": "Aburrida, más de lo mismo"
         },
         {
             "id": 50925,
@@ -38,7 +50,10 @@
             "genero": "Fantasía",
             "estreno": "2001",
             "autores": "J.R.R. Tolkien",
-            "image": "img/elsenordelosanillos.JPG"
+            "image": "img/elsenordelosanillos.JPG",
+            "comentario_1": "Mi saga favorita!!! Quién más viendola por 173487 vez? My preciouuussss",
+            "comentario_2": "Pensé que se trataba de una joyeria, pero no!",
+            "comentario_3": "Ansioso por ver la segunda!"
         }
     ]
 }

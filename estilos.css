@@ -69,7 +69,7 @@ a {
 #cat-list-container{
     
     text-align: center;
-    margin top: 10px;
+    margin-top: 10px;
     
 }
 
@@ -77,4 +77,46 @@ a {
     float: left;
     padding: 30px;
 }
+.estrella {
+    width: 250px;
+    margin: 0 auto;
+    height: 50px;
+  }
+
+  .estrella.clasificacion {
+    text-align: center;
+  }
+
+  .estrella label {
+    font-size: 20px;
+  }
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  label {
+    color: grey;
+  }
+
+  .clasificacion1, .clasificacion2, .clasificacion3 {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+  }
+
+  label:hover,label:hover ~ label {
+    color: orange;
+  }
+
+  .clasificacion1 input[type="radio"]:checked ~ label {
+    color: orange;
+  }
+  .clasificacion2 input[type="radio"]:checked ~ label {
+    color: orange;
+  }
+  .clasificacion3 input[type="radio"]:checked ~ label {
+    color: orange;
+  }
+
+
 

@@ -1,3 +1,5 @@
+
+
 document.addEventListener('DOMContentLoaded', function () {
 
 
@@ -7,11 +9,11 @@ document.addEventListener('DOMContentLoaded', function () {
   
     // Construir la URL del JSON
     const catID = localStorage.getItem("catID");
-    const url = peliculasJSON;
+    const url = `peliculas.json`;
   
   
     // Obtener el elemento donde se mostrarán los detalles del producto
-    const productInfoContainer = document.getElementById('cat-list-container');
+    const productInfoContainer = document.getElementById('movie-info-container');
   
   
     // Realizar una solicitud GET al JSON
@@ -24,20 +26,73 @@ document.addEventListener('DOMContentLoaded', function () {
       })
       .then(data => {
         // Buscar el producto seleccionado por su ID
-        const selectedProduct = data.products.find(product => product.id === parseInt(productID));
-  
+        const selectedProduct = data.peliculas.find(product => product.id === parseInt(productID));
+
+        console.log(productID)
   
         if (selectedProduct) {
           // Llenar el contenedor con los detalles del producto
           productInfoContainer.innerHTML = `
                     <div class="container product-info">
                         <h2 class="p-info" id="product-name">${selectedProduct.name}</h2>
-                        <p>Precio <span id="product-price">${selectedProduct.currency} ${selectedProduct.cost}</span></p>
-                        <p>Descripción <span id="product-description">${selectedProduct.description}</span></p>
-                        <p>Categoría <span id="product-category">${data.catName}</span></p>
-                        <p>Cantidad de vendidos <span id="product-soldCount">${selectedProduct.soldCount}</span></p>
-                        <p>Imágenes ilustrativas</p>
+                        <p>Genero: <span id="product-genero">${selectedProduct.genero}</span></p>
+                        <p>Estreno: <span id="product-estreno">${selectedProduct.estreno}</span></p>
+                        <p>Autores: <span id="product-autores">${selectedProduct.autores}</span></p>
                         <img src="${selectedProduct.image}" alt="${selectedProduct.name}">
+                    </div>
+
+                    <div class="container product-info">
+                        <div>
+                            <p class="p-info" id="product-comentario">${selectedProduct.comentario_1}</p>
+                            <div class="estrella">
+                                <p class="clasificacion1">
+                                <input id="radio1_1" type="radio" name="estrellas" value="1">
+                                <label for="radio1_1">★</label>
+                                <input id="radio2_1" type="radio" name="estrellas2" value="2">
+                                <label for="radio2_1">★</label>
+                                <input id="radio3_1" type="radio" name="estrellas3" value="3">
+                                <label for="radio3_1">★</label>
+                                <input id="radio4_1" type="radio" name="estrellas4" value="4">
+                                <label for="radio4_1">★</label>
+                                <input id="radio5_1" type="radio" name="estrellas5" value="5">
+                                <label for="radio5_1">★</label>
+                                </p>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="p-info" id="product-comentario">${selectedProduct.comentario_2}</p>
+                            <div class="estrella">
+                                <p class="clasificacion2">
+                                <input id="radio1_2" type="radio" name="estrellas6" value="1">
+                                <label for="radio1_2">★</label>
+                                <input id="radio2_2" type="radio" name="estrellas7" value="2">
+                                <label for="radio2_2">★</label>
+                                <input id="radio3_2" type="radio" name="estrellas8" value="3">
+                                <label for="radio3_2">★</label>
+                                <input id="radio4_2" type="radio" name="estrellas9" value="4">
+                                <label for="radio4_2">★</label>
+                                <input id="radio5_2" type="radio" name="estrellas10" value="5">
+                                <label for="radio5_2">★</label>
+                                </p>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="p-info" id="product-comentario">${selectedProduct.comentario_3}</p>
+                            <div class="estrella">
+                                <p class="clasificacion3">
+                                <input id="radio1_3" type="radio" name="estrellas11" value="1">
+                                <label for="radio1_3">★</label>
+                                <input id="radio2_3" type="radio" name="estrellas12" value="2">
+                                <label for="radio2_3">★</label>
+                                <input id="radio3_3" type="radio" name="estrellas13" value="3">
+                                <label for="radio3_3">★</label>
+                                <input id="radio4_3" type="radio" name="estrellas14" value="4">
+                                <label for="radio4_3">★</label>
+                                <input id="radio5_3" type="radio" name="estrellas15" value="5">
+                                <label for="radio5_3">★</label>
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 `;
         } else {
@@ -49,61 +104,5 @@ document.addEventListener('DOMContentLoaded', function () {
       });
   });
   
-
-//
-
-
-  const peliculasJSON = "peliculas.json";
-
-async function getJSONData(peliculas) {
-    return fetch(peliculas)
-        .then(response => {
-            if (response.ok) {
-                return response.json();
-            } else {
-                throw Error(response.statusText);
-            }
-        })
-        .then(function(response) {
-            return { status: 'ok', data: response };
-        })
-        .catch(function(error) {
-            return { status: 'error', data: error };
-        });
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-    getJSONData(peliculasJSON).then(function(resultObj) {
-        if (resultObj.status === "ok") {
-            const peliculasArray = resultObj.data.peliculas;
-            showCategoriesList(peliculasArray);
-        }
-    });
-});
-
-function showCategoriesList(array) {
-    let htmlContentToAppend = "";
-    for (let i = 0; i < array.length; i++) {
-        htmlContentToAppend += `
-            <div class="list-group-item">
-                <div class="row">
-                    <div class="col-3">
-                        <img src="${array[i].image}" alt="peli image" class="img">
-                    </div>
-                    <div class="col">
-                        <div class="d-flex w-100 justify-content-between">
-                            <div class="mb-1">
-                                <h2 class="nombre-peli">${array[i].name}</h2>
-                                <p>Año de estreno:${array[i].estreno}</p> 
-                                <p>Autores: ${array[i].autores} </p>
-                                <p>Género:${array[i].genero}</p>
-                            </div>
-                        </div>
-                        <small class="text-muted"> </small>
-                    </div>
-                </div>
-            </div>
-        `;
-    }
-    document.getElementById("cat-list-container").innerHTML = htmlContentToAppend;
-}
+  
+  

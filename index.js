@@ -30,7 +30,7 @@ function showCategoriesList(array) {
     let htmlContentToAppend = "";
     for (let i = 0; i < array.length; i++) {
         htmlContentToAppend += `
-            <div class="list-group-item">
+            <div id="${array[i].id}" class="list-group-item">
                 <div class="row">
                     <div class="col-3">
                         <img src="${array[i].image}" alt="peli image" class="img">
@@ -51,4 +51,14 @@ function showCategoriesList(array) {
         `;
     }
     document.getElementById("cat-list-container").innerHTML = htmlContentToAppend;
+
+    const productListItems = document.querySelectorAll('.list-group-item');
+    productListItems.forEach(function(item) {
+        item.addEventListener("click", function() {
+            const productId = item.id;
+            localStorage.setItem("productID", productId);
+            console.log(productId)
+            window.location = "movie-info.html";
+        });
+    });
 }
