@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     </div>
 
                     <div class="container product-info">
-                        <div>
+                        <div class="comentario" >
                             <p class="p-info" id="product-comentario">${selectedProduct.comentario_1}</p>
                             <div class="estrella">
                                 <p class="clasificacion1">
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 </p>
                             </div>
                         </div>
-                        <div>
+                        <div class="comentario">
                             <p class="p-info" id="product-comentario">${selectedProduct.comentario_2}</p>
                             <div class="estrella">
                                 <p class="clasificacion2">
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 </p>
                             </div>
                         </div>
-                        <div>
+                        <div class="comentario">
                             <p class="p-info" id="product-comentario">${selectedProduct.comentario_3}</p>
                             <div class="estrella">
                                 <p class="clasificacion3">
@@ -104,5 +104,31 @@ document.addEventListener('DOMContentLoaded', function () {
       });
   });
   
-  
+  // Función para enviar el formulario
+function enviarFormulario() {
+  // Obtiene los datos del formulario
+  const comentario = document.querySelector("input[name='comentario']").value;
+  const autor = document.querySelector("input[name='autor']").value;
+  const calificacion = document.querySelector("input[name='calificacion']:checked").value;
+
+  // Crea un nuevo elemento de comentario
+  const comentarioElemento = document.createElement("p");
+  comentarioElemento.classList.add("comentario");
+  comentarioElemento.textContent = `
+    <strong>${autor}</strong>: ${comentario}
+    <span class="calificacion">${calificacion}</span>
+  `;
+
+  // Agrega el elemento de comentario a la página
+  document.querySelector("#comentarios").appendChild(comentarioElemento);
+
+  // Limpia los campos del formulario
+  document.querySelector("input[name='comentario']").value = "";
+  document.querySelector("input[name='autor']").value = "";
+  document.querySelector("input[name='calificacion']:checked").checked = false;
+}
+
+// Agrega un evento de clic al botón
+document.querySelector("input[type='submit']").addEventListener("click", enviarFormulario);
+
   

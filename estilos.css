@@ -81,6 +81,7 @@ a {
     width: 250px;
     margin: 0 auto;
     height: 50px;
+    margin-right: 10px;
   }
 
   .estrella.clasificacion {
@@ -118,5 +119,69 @@ a {
     color: orange;
   }
 
+  .comentario{
+    font-size: 14px;
+    color: rgb(17, 17, 17);
+    border: 1px solid rgb(158, 158, 158);
+    border-radius: 5px;
+    padding: 10px;
+  }
+/* Estilos para la información sobre las películas */
 
+#movie-info-container {
+  font-size: 14px;
+  color: black;
+  text-align: left;
+  margin: 10px;
+  padding: 5px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-style: solid;
+  border-color: black;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(115, 123, 240, 0.884);
+}
 
+/* Estilos para el formulario */
+
+form {
+  width: 600px;
+  margin: 0 auto;
+  padding: 150px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="text"] {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.autor{
+  width: 50%;
+  padding: 15px;
+}
+
+ .Comentario {
+  width: 100%;
+  padding: 40px;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+input[type="submit"] {
+  background-color: #0f1cc7;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  
+}
+
+input[type="submit"]:hover{
+  background-color: #69c083;
+
+}
